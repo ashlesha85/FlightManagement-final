@@ -1,0 +1,72 @@
+<app-header activeMenu="home"></app-header>
+<div class="container offset-md-4">
+<h3 style="color: white;">Add a Airline</h3>
+<!--<div  style="width: 200px; margin-left: auto;margin-right: auto;"> -->
+  <form #addairline="ngForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-md-2 col-xl-2">
+      <label for="name">Airline Code</label>
+      <input type="text" placeholder="Airline Code" required [(ngModel)]="airline.alId"  class="form-control" id="AlId" name="AlId">
+    </div>
+      <div class="col-md-2 col-xl-2">
+        <label for="name">Airline Name</label>
+        <input type="text" placeholder="Airline Name" required  [(ngModel)]="airline.alName" class="form-control" id="airlineName"  name="AlName">
+      
+      </div>
+    </div>
+
+   <div class="row">
+    <div class="col-md-2 col-xl-2">        
+        <label for="name">Airline Logo</label>
+        <input type="text" placeholder="Airline logo" required  [(ngModel)]="airline.alLogo"  class="form-control" id="airlineName" name="AlLogo">
+       
+      </div>
+    <div class="col-md-2 col-xl-2">
+        <label for="name">Airline customer care number</label>
+        <input type="number" placeholder="Airline number" required  [(ngModel)]="airline.alCustCareNo" class="form-control" id="airlinenumber" name="AlCustCareNo">
+      
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-md-2 col-xl-2">
+        <label for="name">Airline address </label>
+        <input type="text" placeholder="Airline Address" required  [(ngModel)]="airline.alAddr1"  class="form-control" id="airlineAddr1" name="AlAddr1">
+       
+      </div>
+      <div class="col-md-2 col-xl-2">
+        <label for="name">Airline City</label>
+        <input type="text" placeholder="Airline City" required  [(ngModel)]="airline.alCity"  class="form-control" id="airlineAlCity" name="AlCity">
+       
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-md-2 col-xl-2">
+        <label for="name">Airline State</label>
+        <input type="text" placeholder="Airline state" required  [(ngModel)]="airline.alState"  class="form-control" id="airlineState"  name="AlState">
+      
+      </div>
+      <div class="col-md-2 col-xl-2">
+        <label for="name">Airline EmailId</label>
+        <input type="text" placeholder="Airline Emailid" required  [(ngModel)]="airline.alEmail" class="form-control" id="airlineEmail" name="AlEmail">
+     
+      </div>
+    </div>  
+    <div class="row"> 
+    <div class="col-md-2 col-xl-2">
+      <label for="name">Is Airline Blocked</label>
+      <input type="text" placeholder="Airport Isblocked" required  [(ngModel)]="airline.alIsBlocked"  class="form-control" id="airportAlIsBlocked"  name="AlIsBlocked">
+    
+    </div>
+</div>
+<div class="row mt-2"> 
+    <div class="col-md-2 col-xl-2">
+    <button type="submit" class="btn btn-success">Submit</button>
+</div>
+<div class="col-md-1 col-xl-1">
+    <button type="button" (click)="onBack()" class="btn btn-info">Back</button>
+</div>
+</div>
+  </form>
+<!--</div>-->
+</div>
+

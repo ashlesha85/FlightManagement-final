@@ -1,0 +1,73 @@
+<style>
+    #box{
+      width: 50%;
+      height: 50%;
+    }
+    #opacity-3 {
+    opacity:0.6!important;
+  }
+  
+  </style>
+  <app-header activeMenu="home"></app-header>
+  <div class="view" >         
+        <div class="container offset-md-2">    
+        <div class="row">
+                 <div class="col-md-3 col-xl-3" >
+                      <button type = "button" class = "btn btn-light">Airline</button>
+                     
+                   </div>
+                   <div class="col-md-3 col-xl-3" >
+                   
+                    <button type = "button" class = "btn btn-light" (click)="flight()">Flight</button>
+                 </div>               
+                 
+          </div>
+      
+        </div>
+ 
+  
+  </div>
+  <div class="row offset-md-9">
+    <div class="col-md-2 col-xl-4" >
+         <button type = "button" class = "btn btn-success" (click)="airline()">Add Airline</button>        
+      </div>  
+</div>
+    <div class="card col-md-8 offset-md-2 shadow-lg p-6 mb-8 bg-white mt-5" >
+        <h6 style="color:black">List of Airlines</h6>
+      <table class="">
+       
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Airline Code</th>
+            <th scope="col">Airline Name</th>
+           <!-- <th scope="col">Airline Logo</th>-->
+            <th scope="col">Airline Number</th>
+            <th scope="col">Airline Address</th>
+            <th scope="col">Airline City</th>
+           <!-- <th scope="col">Airline State</th>-->
+            <th scope="col">Airline Email Id</th>
+            <th scope="col">Airline IsBlocked</th>
+            <th scope="col">Action</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let airline of airlineobj">
+          
+            <td>{{ airline.alId }}</td>
+            <td>{{ airline.alName }}</td>
+           <!-- <td>{{ airline.alLogo }}</td>-->
+            <td>{{ airline.alCustCareNo }}</td>
+            <td>{{ airline.alAddr1 }}</td>
+            <td>{{ airline.alCity }}</td>
+           <!-- <td>{{ airline.alState }}</td>-->
+            <td>{{ airline.alEmail }}</td>
+            <td>{{ airline.alIsBlocked }}</td>           
+                <button routerLink="/editairline/{{airline.alId}}" class="btn btn-info" style="margin-left: 10px">update</button>
+                <td><button (click)="deleteairline(airline.alId)"class="btn btn-danger">Delete</button>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+     
+    </div>

@@ -1,0 +1,96 @@
+<app-header activeMenu="home"></app-header>
+<div class="container offset-md-4">
+<h3 style="color: white;">Add a Flight</h3>
+<!--<div  style="width: 200px; margin-left: auto;margin-right: auto;"> -->
+  <form #addflight="ngForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-md-2 col-xl-2">
+      <label for="name">Flight No</label>
+      <input type="text" placeholder="Airline Code" required [(ngModel)]="flightobj.flight_No"  class="form-control" id="AlId" name="AlId">
+    </div>
+      <div class="col-md-2 col-xl-2">  
+        <label for="name">Airline Id</label>     
+        <select [(ngModel)]="flightobj.airline_Id"class="form-control">            
+            <option>Choose airline Id</option>
+            <option *ngFor="let airline of airlineobj">{{airline.alId}}</option>
+        </select>      
+      </div>
+    </div>
+
+   <div class="row">
+    <div class="col-md-2 col-xl-2">        
+        <label for="name">Flight source Airport code</label>
+        <input type="text" placeholder="Flight source Airport" required  [(ngModel)]="flightobj.flight_Src_Airportcode"  class="form-control" id="flightsrcAircode" name="flightsrcAirportcode">
+       
+      </div>
+    <div class="col-md-2 col-xl-2">
+        <label for="name">Flight Dest Airport code</label>
+        <input type="text" placeholder="Flight Destination Airport" required  [(ngModel)]="flightobj.flight_Dest_Airportcode" class="form-control" id="flightdestAircode" name="flightdestAirportcode">
+      
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-md-2 col-xl-2">
+        <label for="name">Total No Of seats </label>
+        <input type="text" placeholder="No Of seats" required  [(ngModel)]="flightobj.flight_Total_Noofseats"  class="form-control" id="flightNoofseats" name="flighttotalNoofseats">
+       
+      </div>
+      <div class="col-md-2 col-xl-2">
+        <label for="name">No Of Business Seats</label>
+        <input type="text" placeholder="Business seats" required  [(ngModel)]="flightobj.flight_Total_Bus_Seats"  class="form-control" id="flightBusSeats" name="flighttotalBusSeats">
+       
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-md-2 col-xl-2">
+        <label for="name">No Of Economic Seats</label>
+        <input type="text" placeholder="Economic seats" required  [(ngModel)]="flightobj.flight_Total_Eco_Seats"  class="form-control" id="flightEcoSeats"  name="flighttotalEcoSeats">
+      
+      </div>
+      <div class="col-md-2 col-xl-2">
+        <label for="name">No Of Rows</label>
+        <input type="text" placeholder="no of rows" required  [(ngModel)]="flightobj.flight_No_Of_Rows"  class="form-control" id="NoOfRows"  name="flightnoOfRows">
+      
+      </div>
+     
+    </div>  
+    <div class="row"> 
+        <div class="col-md-2 col-xl-2">
+            <label for="name">Instrument Used</label>
+            <input type="text" placeholder="instrument used" required  [(ngModel)]="flightobj.flight_Inst_Used" class="form-control" id="fInstUsed" name="flightinstUsed">
+         
+          </div>
+        <div class="col-md-2 col-xl-2">
+          <label for="name">Flight Departure Date</label>
+          <input type="date" placeholder="Departure Date" required  [(ngModel)]="flightobj.flight_Dept_Dt" class="form-control" id="DeptDt" name="flightdeptDt">
+       
+        </div>
+      </div>  
+    <div class="row"> 
+    <div class="col-md-2 col-xl-2">
+      <label for="name">Flight Arrival Date</label>
+      <input type="date" placeholder="Arrival date" required  [(ngModel)]="flightobj.flight_Arriv_Dt"  class="form-control" id="ArrivDt"  name="flightarrivDt">
+    
+    </div>
+    <div class="col-md-2 col-xl-2">
+        <label for="name">Flight Business Ticket Price</label>
+        <input type="text" placeholder="ticket price" required  [(ngModel)]="flightobj.flight_bus_ticket_price"  class="form-control" id="busticketprice"  name="flightBusticketprice">
+      
+      </div>
+</div>
+<div class="row"> 
+    <div class="col-md-2 col-xl-2">
+      <label for="name">Flight Economic Ticket Price</label>
+      <input type="text" placeholder="Ticket price" required  [(ngModel)]="flightobj.flight_Eco_Ticket_Price"  class="form-control" id="EcoTicketPrice"  name="flightEcoTicketPrice">
+    
+    </div>   
+</div>
+<div class="row mt-2"> 
+    <div class="col-md-2 col-xl-2">
+    <button type="submit" class="btn btn-success">Submit</button>
+</div>
+
+</div>
+  </form>
+<!--</div>-->
+</div>

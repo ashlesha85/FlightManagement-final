@@ -1,0 +1,134 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/AirlineAPI/GetAirline",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+
+      "UpstreamPathTemplate": "/AirlineAPI/GetAirline",
+      //"UpstreamPathTemplate": "/api/airline/GetAirline",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/AirlineAPI/AddAirline",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/AirlineAPI/AddAirline",
+      // "UpstreamPathTemplate": "/api/{version}/flight/airline/register",
+      "UpstreamHttpMethod": [ "POST" ]
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/AirlineAPI/GetAirlineById",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      "UpstreamPathTemplate": "/AirlineAPI/GetAirlineById",
+      // "UpstreamPathTemplate": "/api/{version}/flight/airline/register",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/AirlineAPI/EditAirline",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/AirlineAPI/EditAirline",
+      // "UpstreamPathTemplate": "/api/{version}/flight/airline/register",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/AirlineAPI/DeleteAirline",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/AirlineAPI/DeleteAirline",
+      // "UpstreamPathTemplate": "/api/{version}/flight/airline/register",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+
+    },
+    //Users :->
+    {
+      "DownstreamPathTemplate": "/api/FlightAPI/Login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      // "UpstreamPathTemplate": "/api/{version}/flight/admin/login",
+      "UpstreamPathTemplate": "/api/FlightAPI/Login",
+      "UpstreamHttpMethod": [ "Get", "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/{version}/Users/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "9001"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/{version}/Users/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post" ]
+    },
+    //flightAddFlight
+    {
+      "DownstreamPathTemplate": "/api/FlightAPI/AddFlight",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/FlightAPI/AddFlight",
+      // "UpstreamPathTemplate": "/api/{version}/flight/airline/register",
+      "UpstreamHttpMethod": [ "POST" ]
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/FlightAPI/GetFlightDetails",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/FlightAPI/GetFlightDetails",
+      // "UpstreamPathTemplate": "/api/{version}/flight/airline/register",
+      "UpstreamHttpMethod": [ "Get","POST" ]
+
+    }
+  ]
+
+
+
+}
+

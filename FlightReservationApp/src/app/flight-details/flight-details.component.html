@@ -1,0 +1,65 @@
+<app-header></app-header>
+<div class="view" >         
+    <div class="container offset-md-2">    
+    <div class="row">
+             <div class="col-md-3 col-xl-3" >
+                  <button type = "button" class = "btn btn-light">Airline</button>                 
+               </div>
+               <div class="col-md-3 col-xl-3" >               
+                <button type = "button" class = "btn btn-light" (click)="flight()">Flight</button>
+             </div>          
+      </div>  
+    </div>
+</div>
+<div class="row offset-md-9">
+    <div class="col-md-2 col-xl-4" >
+         <button type = "button" class = "btn btn-success" (click)="addFlight()">Add Flight</button>        
+      </div>  
+</div>
+<div class="card col-md-8 offset-md-2 shadow-lg p-6 mb-8 bg-white mt-5" >
+    <h6 style="color:black">List of Flights</h6>
+  <table class="">
+   
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Flight No</th>
+        <th scope="col">Airline Id</th>
+       <th scope="col">Flight Scr Airportcode</th>
+        <th scope="col">Flight Dest Airportcode</th>
+        <th scope="col">Flight Total Seats</th>
+        <th scope="col">Flight Business class Tickets</th>
+        <th scope="col">Flight Economic class Tickets</th>
+        <th scope="col">Flight No of Rows</th>
+        <th scope="col">Flight Inst used</th>
+        <th scope="col">Flight Departure Date</th>
+        <th scope="col">Flight Arrival Date</th>
+        <th scope="col">Flight Business Ticket Price</th>
+        <th scope="col">Flight Economic Ticket Price</th>
+        <th scope="col">Action</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let flight of flightobj">
+      
+        <td>{{ flight.flightNo }}</td>
+        <td>{{ flight.airlineId }}</td>        
+        <td>{{ flight.flightSrcAirportcode }}</td>
+        <td>{{ flight.flightDestAirportcode }}</td>
+        <td>{{ flight.flightTotalNoofseats }}</td>
+       <td>{{ flight.flightTotalBusSeats }}</td>
+        <td>{{ flight.flightTotalEcoSeats }}</td>
+        <td>{{ flight.flightNoOfRows }}</td>   
+        <td>{{ flight.flightInstUsed }}</td>
+        <td>{{ flight.flightDeptDt | date:'yyyy-MM-dd' }}</td>
+        <td>{{ flight.flightArrivDt | date:'yyyy-MM-dd'}}</td>
+        <td>{{ flight.flightBusTicketPrice }}</td> 
+        <td>{{ flight.flightEcoTicketPrice }}</td>       
+            <button  class="btn btn-info" style="margin-left: 10px">update</button>
+            <td><button class="btn btn-danger">Delete</button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+ 
+</div>
